@@ -1,6 +1,9 @@
 " Enable syntax highlighting.
 syntax on
 
+" Project specific .vimrc.
+set exrc
+
 " Turn off welcome message.
 set shortmess=I
 
@@ -61,6 +64,7 @@ Plug 'mbbill/undotree' " Show recent changes.
 Plug 'editorconfig/editorconfig-vim' " Support .editorconfig.
 Plug 'vim-airline/vim-airline' " Status bar.
 Plug 'junegunn/fzf' " Fuzzy file finder.
+Plug 'dense-analysis/ale'
 call plug#end()
 
 " Color scheme.
@@ -83,7 +87,7 @@ nnoremap <leader>sv :vsp<CR>
 nnoremap <leader>t :tabnew<CR>
 nnoremap <leader>tn :tabn<CR>
 
-" Remap toggling splits: up, down, left, right ;-)
+" Remap toggling splits: left, down, up, right ;-)
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
