@@ -14,6 +14,9 @@ set smartindent
 " Allow backspace.
 set backspace=indent,eol,start
 
+" Decrease update time.
+set updatetime=50
+
 " Enable line numbers and no line wrapping.
 set nu
 set nowrap
@@ -57,6 +60,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'mbbill/undotree'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'vim-airline/vim-airline'
+Plug 'junegunn/fzf'
 call plug#end()
 
 " Color scheme.
@@ -75,11 +79,18 @@ let mapleader = " "
 nnoremap <leader>sh :sp<CR>
 nnoremap <leader>sv :vsp<CR>
 
+" Remap tabs.
+nnoremap <leader>t :tabnew<CR>
+nnoremap <leader>tn :tabn<CR>
+
 " Remap toggling splits.
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
+
+" Remap fuzzy searching.
+nnoremap <leader>f :FZF<CR>
 
 " Remap undotree.
 nnoremap <leader>u :UndotreeShow<CR>
