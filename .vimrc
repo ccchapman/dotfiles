@@ -56,6 +56,7 @@ Plug 'lyuts/vim-rtags'
 Plug 'kien/ctrlp.vim'
 Plug 'mbbill/undotree'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 " Color scheme.
