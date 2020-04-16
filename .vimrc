@@ -1,6 +1,9 @@
 " Enable syntax highlighting.
 syntax on
 
+" Turn off welcome message.
+set shortmess=I
+
 " Turn off error bells.
 set noerrorbells
 
