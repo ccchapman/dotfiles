@@ -83,7 +83,7 @@ nnoremap <leader>sv :vsp<CR>
 nnoremap <leader>t :tabnew<CR>
 nnoremap <leader>tn :tabn<CR>
 
-" Remap toggling splits.
+" Remap toggling splits: up, down, left, right ;-)
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
