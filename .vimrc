@@ -71,6 +71,10 @@ endif
 " Set leader key to space.
 let mapleader = " "
 
+" Remap splits.
+nnoremap <leader>sh :sp<CR>
+nnoremap <leader>sv :vsp<CR>
+
 " Remap toggling splits.
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
