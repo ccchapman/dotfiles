@@ -53,17 +53,14 @@ hi SpellBad cterm=underline ctermbg=none
 
 " Install plugins with Plug.
 call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'
-Plug 'jremmen/vim-ripgrep'
-Plug 'tpope/vim-fugitive'
-Plug 'leafgarland/typescript-vim'
-Plug 'vim-utils/vim-man'
-Plug 'lyuts/vim-rtags'
-Plug 'kien/ctrlp.vim'
-Plug 'mbbill/undotree'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'vim-airline/vim-airline'
-Plug 'junegunn/fzf'
+Plug 'morhetz/gruvbox' " Color scheme.
+Plug 'jremmen/vim-ripgrep' " Search in project.
+Plug 'tpope/vim-fugitive' " Everything Git.
+Plug 'vim-utils/vim-man' " Vim man pages.
+Plug 'mbbill/undotree' " Show recent changes.
+Plug 'editorconfig/editorconfig-vim' " Support .editorconfig.
+Plug 'vim-airline/vim-airline' " Status bar.
+Plug 'junegunn/fzf' " Fuzzy file finder.
 call plug#end()
 
 " Color scheme.
