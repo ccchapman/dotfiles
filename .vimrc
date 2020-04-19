@@ -76,6 +76,11 @@ if executable('rg')
     let g:rg_derive_root='true'
 endif
 
+" Jump to the last position when reading any file.
+autocmd BufReadPost *
+  \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+  \ |   exe "normal! g`\""
+  \ | endif
 " Set leader key to space.
 let mapleader = " "
 
@@ -87,11 +92,17 @@ nnoremap <leader>sv :vsp<CR>
 nnoremap <leader>t :tabnew<CR>
 nnoremap <leader>tn :tabn<CR>
 
-" Remap toggling splits: left, down, up, right ;-)
+" Remap toggling splits.
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
+
+" Remap arrow keys.
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
 
 " Remap fuzzy searching.
 nnoremap <leader>f :FZF<CR>
@@ -104,9 +115,3 @@ nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 
 " Remap ripgrep.
 nnoremap <Leader>ps :Rg<SPACE>
-
-" Jump to the last position when reading any file.
-autocmd BufReadPost *
-  \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
-  \ |   exe "normal! g`\""
-  \ | endif
