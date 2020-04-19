@@ -104,3 +104,9 @@ nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 
 " Remap ripgrep.
 nnoremap <Leader>ps :Rg<SPACE>
+
+" Jump to the last position when reading any file.
+autocmd BufReadPost *
+  \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+  \ |   exe "normal! g`\""
+  \ | endif
