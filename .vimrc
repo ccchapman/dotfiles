@@ -24,7 +24,7 @@ set backspace=indent,eol,start
 set updatetime=50
 
 " Enable line numbers and no line wrapping.
-set nu
+set nu rnu
 set nowrap
 
 " Use undo directory and disable swap and backups.
