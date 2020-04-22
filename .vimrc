@@ -65,6 +65,7 @@ Plug 'editorconfig/editorconfig-vim' " Support .editorconfig.
 Plug 'vim-airline/vim-airline' " Status bar.
 Plug 'junegunn/fzf' " Fuzzy file finder.
 Plug 'dense-analysis/ale'
+Plug 'nelsyeung/twig.vim'
 call plug#end()
 
 " Color scheme.
