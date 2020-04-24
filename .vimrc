@@ -33,6 +33,7 @@ set undofile
 " Improved searching.
 set smartcase
 set incsearch
+set hlsearch
 
 " Show character column bar.
 set colorcolumn=80
