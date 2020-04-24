@@ -4,9 +4,6 @@ syntax on
 " Project specific .vimrc.
 set exrc
 
-" Turn off welcome message.
-set shortmess=I
-
 " Turn off error bells.
 set noerrorbells
 
@@ -40,6 +37,10 @@ set incsearch
 " Show character column bar.
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+" Short messages and taller command line.
+set shortmess=Ia
+set cmdheight=2
 
 " Remove trailing whitespace on save.
 fun! TrimWhitespace()
