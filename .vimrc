@@ -58,6 +58,7 @@ hi SpellBad cterm=underline ctermbg=none
 
 " Install plugins with Plug.
 call plug#begin('~/.vim/plugged')
+Plug 'ycm-core/YouCompleteMe' " Code completion.
 Plug 'morhetz/gruvbox' " Color scheme.
 Plug 'jremmen/vim-ripgrep' " Search in project.
 Plug 'tpope/vim-fugitive' " Everything Git.
