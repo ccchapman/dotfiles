@@ -66,8 +66,8 @@ Plug 'mbbill/undotree' " Show recent changes.
 Plug 'editorconfig/editorconfig-vim' " Support .editorconfig.
 Plug 'vim-airline/vim-airline' " Status bar.
 Plug 'junegunn/fzf' " Fuzzy file finder.
-Plug 'dense-analysis/ale'
-Plug 'nelsyeung/twig.vim'
+Plug 'dense-analysis/ale' " Linting support.
+Plug 'nelsyeung/twig.vim' " Twig syntax highlighting.
 call plug#end()
 
 " Color scheme.
