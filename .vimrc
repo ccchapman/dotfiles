@@ -102,10 +102,15 @@ nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 
 " Remap arrow keys.
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
+
+inoremap <Up> <nop>
+inoremap <Down> <nop>
+inoremap <Left> <nop>
+inoremap <Right> <nop>
 
 " Remap fuzzy searching.
 nnoremap <leader>f :FZF<CR>
