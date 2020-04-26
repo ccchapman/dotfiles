@@ -69,11 +69,18 @@ Plug 'vim-airline/vim-airline' " Status bar.
 Plug 'junegunn/fzf' " Fuzzy file finder.
 Plug 'dense-analysis/ale' " Linting support.
 Plug 'nelsyeung/twig.vim' " Twig syntax highlighting.
+Plug 'vimwiki/vimwiki' " Personal Wiki.
 call plug#end()
 
 " Color scheme.
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
+
+" VimWiki requirements.
+set nocompatible
+filetype plugin on
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
 " Use project root and ignore for searching.
 if executable('rg')
