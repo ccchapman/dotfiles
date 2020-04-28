@@ -7,6 +7,9 @@ set exrc
 " Turn off error bells.
 set noerrorbells
 
+" Clipboard sharing.
+set clipboard=unnamed
+
 " Set reasonable tab defaults.
 set tabstop=4
 set softtabstop=4
