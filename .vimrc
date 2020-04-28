@@ -100,13 +100,6 @@ autocmd BufReadPost *
 " Set leader key to space.
 let mapleader = " "
 
-" Remap pairs.
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-
 " Remap splits.
 nnoremap <leader>sh :sp<CR>
 nnoremap <leader>sv :vsp<CR>
