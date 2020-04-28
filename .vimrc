@@ -13,6 +13,7 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
+set autoindent
 
 " Allow backspace.
 set backspace=indent,eol,start
@@ -92,8 +93,16 @@ autocmd BufReadPost *
   \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
   \ |   exe "normal! g`\""
   \ | endif
+
 " Set leader key to space.
 let mapleader = " "
+
+" Remap pairs.
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
 
 " Remap splits.
 nnoremap <leader>sh :sp<CR>
