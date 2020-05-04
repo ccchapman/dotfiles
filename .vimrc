@@ -60,6 +60,9 @@ autocmd BufWritePre * :call TrimWhitespace()
 set spell
 hi SpellBad cterm=underline ctermbg=none
 
+" Highlight current line.
+set cursorline
+
 " Install plugins with Plug.
 call plug#begin('~/.vim/plugged')
 Plug 'ycm-core/YouCompleteMe' " Code completion.
