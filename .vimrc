@@ -80,6 +80,7 @@ Plug 'junegunn/fzf' " Fuzzy file finder.
 Plug 'dense-analysis/ale' " Linting support.
 Plug 'nelsyeung/twig.vim' " Twig syntax highlighting.
 Plug 'vimwiki/vimwiki' " Personal Wiki.
+Plug 'jwalton512/vim-blade'
 call plug#end()
 
 " Color scheme.
