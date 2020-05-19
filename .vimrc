@@ -40,7 +40,7 @@ set incsearch
 set hlsearch
 
 " Show character column bar.
-set colorcolumn=80
+set colorcolumn=80,120
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " Short messages and taller command line.
