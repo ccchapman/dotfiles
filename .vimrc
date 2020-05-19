@@ -47,6 +47,9 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 set shortmess=Ia
 set cmdheight=2
 
+" Visualize indentation.
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:␣
+
 " Remove trailing whitespace on save.
 fun! TrimWhitespace()
     let l:save = winsaveview()
@@ -139,3 +142,6 @@ nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 
 " Remap ripgrep.
 nnoremap <Leader>ps :Rg<SPACE>
+
+" Remap toggle list.
+nnoremap <Leader>i :set list!<CR>
