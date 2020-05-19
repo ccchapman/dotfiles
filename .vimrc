@@ -104,6 +104,9 @@ autocmd BufReadPost *
   \ |   exe "normal! g`\""
   \ | endif
 
+" Airline Powerline fonts.
+let g:airline_powerline_fonts = 1
+
 " Set leader key to space.
 let mapleader = " "
 
