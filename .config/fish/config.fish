@@ -9,3 +9,13 @@ export FZF_DEFAULT_OPTS='
 
 fish_vi_key_bindings
 set fish_greeting
+
+function fish_prompt
+    set_color $fish_color_cwd
+    echo -n (prompt_pwd)
+    set_color normal
+    echo -n ' '
+end
+
+function fish_right_prompt
+end
