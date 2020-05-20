@@ -45,7 +45,6 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " Short messages and taller command line.
 set shortmess=Ia
-set cmdheight=2
 
 " Visualize indentation.
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:␣
@@ -68,30 +67,33 @@ set cursorline
 
 " Install plugins with Plug.
 call plug#begin('~/.vim/plugged')
-Plug 'ycm-core/YouCompleteMe' " Code completion.
-Plug 'morhetz/gruvbox' " Color scheme.
-Plug 'jremmen/vim-ripgrep' " Search in project.
-Plug 'tpope/vim-fugitive' " Everything Git.
-Plug 'vim-utils/vim-man' " Vim man pages.
-Plug 'mbbill/undotree' " Show recent changes.
-Plug 'editorconfig/editorconfig-vim' " Support .editorconfig.
-Plug 'vim-airline/vim-airline' " Status bar.
-Plug 'junegunn/fzf' " Fuzzy file finder.
-Plug 'dense-analysis/ale' " Linting support.
-Plug 'nelsyeung/twig.vim' " Twig syntax highlighting.
-Plug 'vimwiki/vimwiki' " Personal Wiki.
+Plug 'arcticicestudio/nord-vim'
+Plug 'dense-analysis/ale'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'itchyny/lightline.vim'
+Plug 'jremmen/vim-ripgrep'
+Plug 'junegunn/fzf'
 Plug 'jwalton512/vim-blade'
+Plug 'nelsyeung/twig.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'vimwiki/vimwiki'
+Plug 'ycm-core/youcompleteme'
 call plug#end()
 
 " Color scheme.
-let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
+colorscheme nord
+
+" Lightline.
+set laststatus=2
+let g:lightline = {
+    \ 'colorscheme': 'nord',
+    \ }
 
 " VimWiki requirements.
 set nocompatible
 filetype plugin on
 let g:vimwiki_list = [{'path': '~/vimwiki/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
+    \ 'syntax': 'markdown', 'ext': '.md'}]
 
 " Use project root and ignore for searching.
 if executable('rg')
@@ -100,12 +102,9 @@ endif
 
 " Jump to the last position when reading any file.
 autocmd BufReadPost *
-  \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
-  \ |   exe "normal! g`\""
-  \ | endif
-
-" Airline Powerline fonts.
-let g:airline_powerline_fonts = 1
+    \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+    \ |   exe "normal! g`\""
+    \ | endif
 
 " Set leader key to space.
 let mapleader = " "
@@ -138,14 +137,14 @@ inoremap <Right> <nop>
 " Remap fuzzy searching.
 nnoremap <leader>f :FZF<CR>
 
-" Remap undotree.
-nnoremap <leader>u :UndotreeShow<CR>
-
 " Remap file tree.
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 
 " Remap ripgrep.
-nnoremap <Leader>ps :Rg<SPACE>
+nnoremap <Leader>r :!rg<Space>
 
 " Remap toggle list.
 nnoremap <Leader>i :set list!<CR>
+
+" Don't show the mode.
+set noshowmode
