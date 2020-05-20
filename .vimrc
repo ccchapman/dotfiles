@@ -77,7 +77,7 @@ Plug 'jwalton512/vim-blade'
 Plug 'nelsyeung/twig.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vimwiki/vimwiki'
-Plug 'ycm-core/youcompleteme'
+Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
 " Color scheme.
