@@ -65,6 +65,25 @@ hi SpellBad cterm=underline ctermbg=none
 " Highlight current line.
 set cursorline
 
+" coc extensions.
+let g:coc_global_extensions = [
+            \ 'coc-phpls',
+            \ 'coc-tsserver',
+            \ ]
+
+" coc tab completion.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
 " Install plugins with Plug.
 call plug#begin('~/.vim/plugged')
 Plug 'arcticicestudio/nord-vim'
@@ -75,9 +94,9 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf'
 Plug 'jwalton512/vim-blade'
 Plug 'nelsyeung/twig.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
 Plug 'vimwiki/vimwiki'
-Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
 " Color scheme.
@@ -145,6 +164,9 @@ nnoremap <Leader>r :!rg<Space>
 
 " Remap toggle list.
 nnoremap <Leader>i :set list!<CR>
+
+" Remap search clearing.
+nnoremap <Leader>cs :noh<CR>
 
 " Don't show the mode.
 set noshowmode
