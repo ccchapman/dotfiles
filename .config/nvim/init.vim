@@ -53,10 +53,10 @@ fun! TrimWhitespace()
   call winrestview(l:save)
 endfun
 
-fun! s:check_back_space() abort
+fun! s:checkBackSpace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+endfun
 
 let mapleader = ' '
 
@@ -72,7 +72,7 @@ nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
 nnoremap <leader>cr :CocRestart
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ <SID>checkBackSpace() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
@@ -97,7 +97,7 @@ nnoremap <Leader>i :set list!<CR>
 
 nnoremap <Leader>cs :noh<CR>
 
-nnoremap <Leader>g :G<CR>
+nnoremap <Leader>gs :G<CR>
 
 autocmd BufReadPost * exe 'normal! g`"'
 autocmd BufWritePre * :call TrimWhitespace()
