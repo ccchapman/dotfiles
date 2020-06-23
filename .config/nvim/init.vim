@@ -1,14 +1,17 @@
 call plug#begin('~/.vim/plugged')
 
-  Plug 'editorconfig/editorconfig-vim'
+  Plug 'morhetz/gruvbox'
+
   Plug 'itchyny/lightline.vim'
+
   Plug 'jremmen/vim-ripgrep'
   Plug 'junegunn/fzf'
-  Plug 'jwalton512/vim-blade'
-  Plug 'morhetz/gruvbox'
-  Plug 'nelsyeung/twig.vim'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'tpope/vim-fugitive'
+
+  Plug 'editorconfig/editorconfig-vim'
+  Plug 'jwalton512/vim-blade', { 'for': 'blade.php' }
+  Plug 'nelsyeung/twig.vim', { 'for': 'twig' }
 
 call plug#end()
 
@@ -36,11 +39,23 @@ set shortmess=Ia
 set spell
 set noshowmode
 set laststatus=2
+set updatetime=300
 
 colorscheme gruvbox
 
 hi ColorColumn ctermbg=0 guibg=lightgrey
 hi SpellBad cterm=underline ctermbg=none
+
+fun! TrimWhitespace()
+  let l:save = winsaveview()
+  keeppatterns %s/\s\+$//e
+  call winrestview(l:save)
+endfun
+
+fun! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 let mapleader = ' '
 
@@ -54,6 +69,11 @@ nmap <leader>g] <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev-error)
 nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
 nnoremap <leader>cr :CocRestart
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 nnoremap <leader>sh :sp<CR>
 nnoremap <leader>sv :vsp<CR>
@@ -77,12 +97,6 @@ nnoremap <Leader>i :set list!<CR>
 nnoremap <Leader>cs :noh<CR>
 
 nnoremap <Leader>g :G<CR>
-
-fun! TrimWhitespace()
-  let l:save = winsaveview()
-  keeppatterns %s/\s\+$//e
-  call winrestview(l:save)
-endfun
 
 autocmd BufReadPost * exe 'normal! g`"'
 autocmd BufWritePre * :call TrimWhitespace()
