@@ -99,7 +99,8 @@ nnoremap <Leader>cs :noh<CR>
 
 nnoremap <Leader>gs :G<CR>
 
-autocmd BufReadPost * exe 'normal! g`"'
+" TODO Ignore git commits
+" autocmd BufReadPost * exe 'normal! g`"'
 autocmd BufWritePre * :call TrimWhitespace()
 
 let g:lightline = {
@@ -109,4 +110,6 @@ let g:lightline = {
 let g:coc_global_extensions = [
   \ 'coc-phpls',
   \ 'coc-tsserver',
+  \ 'coc-css',
+  \ 'coc-tailwindcss',
   \ ]
