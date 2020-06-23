@@ -81,7 +81,6 @@ nmap <silent> gr <Plug>(coc-references)
 
 " Install plugins with Plug.
 call plug#begin('~/.vim/plugged')
-Plug 'arcticicestudio/nord-vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'jremmen/vim-ripgrep'
@@ -91,15 +90,16 @@ Plug 'nelsyeung/twig.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
 Plug 'vimwiki/vimwiki'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 " Color scheme.
-colorscheme nord
+colorscheme gruvbox
 
 " Lightline.
 set laststatus=2
 let g:lightline = {
-    \ 'colorscheme': 'nord',
+    \ 'colorscheme': 'gruvbox',
     \ }
 
 " VimWiki requirements.
