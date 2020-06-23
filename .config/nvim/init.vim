@@ -40,6 +40,7 @@ set spell
 set noshowmode
 set laststatus=2
 set updatetime=300
+set shell=bash
 
 colorscheme gruvbox
 
