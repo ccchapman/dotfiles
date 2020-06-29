@@ -97,7 +97,7 @@ nnoremap <Leader>i :set list!<CR>
 
 nnoremap <Leader>cs :noh<CR>
 
-nnoremap <Leader>gs :G<CR>
+nmap <Leader>gs :G<bar> :only<CR>
 
 " TODO Ignore git commits
 " autocmd BufReadPost * exe 'normal! g`"'
