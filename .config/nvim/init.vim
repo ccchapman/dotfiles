@@ -21,7 +21,7 @@ set shiftwidth=2
 set expandtab
 set smartindent
 set autoindent
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:␣
+set listchars=tab:>-,trail:~,space:␣
 
 set nu rnu
 set nowrap
@@ -99,8 +99,10 @@ nnoremap <Leader>cs :noh<CR>
 
 nmap <Leader>gs :G<bar> :only<CR>
 
-" TODO Ignore git commits
-" autocmd BufReadPost * exe 'normal! g`"'
+autocmd BufReadPost *
+  \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+  \ |   exe "normal! g`\""
+  \ | endif
 autocmd BufWritePre * :call TrimWhitespace()
 
 let g:lightline = {
