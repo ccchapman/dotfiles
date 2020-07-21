@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'jremmen/vim-ripgrep'
   Plug 'junegunn/fzf'
   Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+  Plug 'mattn/emmet-vim'
   Plug 'tpope/vim-fugitive'
 
   Plug 'editorconfig/editorconfig-vim'
@@ -114,4 +115,10 @@ let g:coc_global_extensions = [
   \ 'coc-tsserver',
   \ 'coc-css',
   \ 'coc-tailwindcss',
+  \ 'coc-emmet',
+  \ 'coc-pairs',
   \ ]
+
+let g:coc_filetype_map = {
+  \ 'html.twig.js.css': 'html',
+  \ }

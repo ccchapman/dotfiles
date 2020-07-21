@@ -1,4 +1,8 @@
 {
   "scss.validate": false,
-  "tailwindCSS.headwind.runOnSave": false
+  "css.validate": false,
+  //"tailwindCSS.headwind.runOnSave": false,
+  "emmet.includeLanguages": {
+    "twig": "html"
+  }
 }
