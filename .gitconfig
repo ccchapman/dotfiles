@@ -1,0 +1,13 @@
+[pull]
+  rebase = true
+[core]
+  excludesfile = ~/.gitignore_global
+[alias]
+  search = log --source --all -S
+  co = checkout
+  br = branch
+  ci = commit
+  st = status
+  up = pull --rebase --autostash
+[rerere]
+  enabled = false
