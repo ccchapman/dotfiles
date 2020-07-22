@@ -4,7 +4,6 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'itchyny/lightline.vim'
 
-  Plug 'jremmen/vim-ripgrep'
   Plug 'junegunn/fzf'
   Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'mattn/emmet-vim'
