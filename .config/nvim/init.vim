@@ -37,6 +37,7 @@ set updatetime=300
 colorscheme gruvbox
 hi ColorColumn ctermbg=0 guibg=lightgrey
 hi SpellBad cterm=underline ctermbg=none
+hi Comment cterm=italic
 
 let mapleader = ' '
 
