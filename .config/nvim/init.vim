@@ -33,7 +33,7 @@ set incsearch
 set hlsearch
 set icm=split
 
-set clipboard=unnamed
+set clipboard=unnamedplus
 set colorcolumn=80,120
 set shortmess=Ia
 set spell
