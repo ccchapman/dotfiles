@@ -58,6 +58,7 @@ nmap <leader>sh :sp<cr>
 nmap <leader>sv :vsp<cr>
 nmap <leader>tc :tabnew<cr>
 nmap <leader>tn :tabn<cr>
+nmap <leader>tf :call Tether()<cr>
 
 autocmd BufReadPost *
   \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
@@ -89,4 +90,15 @@ fun! TrimWhitespace()
   let l:save = winsaveview()
   keeppatterns %s/\s\+$//e
   call winrestview(l:save)
+endfun
+
+fun! Tether()
+  call inputsave()
+  let extension = input('Enter extension: ')
+  call inputrestore()
+  for file in systemlist($FZF_DEFAULT_COMMAND)
+    if file =~ expand('%:t:r') . '.' . extension
+      execute 'e ' . file
+    endif
+  endfor
 endfun
