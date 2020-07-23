@@ -4,5 +4,8 @@
   //"tailwindCSS.headwind.runOnSave": false,
   "emmet.includeLanguages": {
     "twig": "html"
-  }
+  },
+  "emmet.excludeLanguages": [
+    "css"
+  ]
 }
