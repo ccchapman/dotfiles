@@ -91,8 +91,6 @@ nnoremap <leader>f :FZF<CR>
 
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 
-nnoremap <Leader>rg :Rg<Space>
-
 nnoremap <Leader>i :set list!<CR>
 
 nnoremap <Leader>cs :noh<CR>
