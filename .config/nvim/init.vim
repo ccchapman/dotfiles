@@ -77,6 +77,7 @@ let g:coc_global_extensions = [
   \ 'coc-phpls',
   \ 'coc-tailwindcss',
   \ 'coc-tsserver',
+  \ 'coc-snippets',
   \ ]
 let g:coc_filetype_map = {
   \ 'html.twig.js.css': 'html',
