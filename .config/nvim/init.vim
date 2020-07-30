@@ -5,7 +5,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'jwalton512/vim-blade', { 'for': 'blade.php' }
   Plug 'mattn/emmet-vim'
   Plug 'morhetz/gruvbox'
-  Plug 'nelsyeung/twig.vim', { 'for': 'twig' }
+  Plug 'beyondwords/vim-twig'
   Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'tpope/vim-fugitive'
 call plug#end()
@@ -66,6 +66,7 @@ autocmd BufReadPost *
   \ |   exe "normal! g`\""
   \ | endif
 autocmd BufWritePre * :call TrimWhitespace()
+autocmd BufRead,BufNewFile *.twig set filetype=html.twig
 
 let g:lightline = {
   \ 'colorscheme': 'gruvbox',
@@ -82,6 +83,8 @@ let g:coc_global_extensions = [
 let g:coc_filetype_map = {
   \ 'html.twig.js.css': 'html',
   \ }
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,4 --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 
 fun! s:checkBackSpace() abort
   let col = col('.') - 1
