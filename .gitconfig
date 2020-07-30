@@ -11,3 +11,5 @@
   up = pull --rebase --autostash
 [rerere]
   enabled = false
+[user]
+	email = 42548502+ccchapman@users.noreply.github.com
