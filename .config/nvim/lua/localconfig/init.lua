@@ -24,18 +24,24 @@ end
 
 local indentSize = 2
 
-setBufferConfig({
+setBufferConfig {
   et = true,
-  sw = indentSize,
   sts = indentSize,
+  sw = indentSize,
   ts = indentSize,
-})
+}
 
-setWindowConfig({
+setWindowConfig {
+  cc = '80',
   nu = true,
   rnu = true,
-})
+  spell = true,
+  wrap = false,
+}
 
-setGlobalConfig({
+setGlobalConfig {
   icm = 'split',
-})
+  shell = 'bash',
+  shortmess = 'Ia',
+  updatetime = 300,
+}
