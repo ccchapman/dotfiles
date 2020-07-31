@@ -20,6 +20,12 @@ local function setWindowConfig(config)
   end
 end
 
+local function setCommands(commands)
+  for i, command in ipairs(commands) do
+    nvim.nvim_command(command)
+  end
+end
+
 --- config
 
 local indentSize = 2
@@ -35,7 +41,6 @@ setWindowConfig {
   cc = '80',
   nu = true,
   rnu = true,
-  spell = true,
   wrap = false,
 }
 
@@ -44,4 +49,8 @@ setGlobalConfig {
   shell = 'bash',
   shortmess = 'Ia',
   updatetime = 300,
+}
+
+setCommands {
+  --- 'colorscheme gruvbox',
 }
