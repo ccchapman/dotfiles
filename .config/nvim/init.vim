@@ -70,6 +70,8 @@ autocmd BufReadPost *
 autocmd BufWritePre * :call TrimWhitespace()
 autocmd BufRead,BufNewFile *.twig set filetype=html.twig
 
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
 let g:lightline = {
   \ 'colorscheme': 'dracula',
   \ }
@@ -78,6 +80,7 @@ let g:coc_global_extensions = [
   \ 'coc-emmet',
   \ 'coc-pairs',
   \ 'coc-phpls',
+  \ 'coc-prettier',
   \ 'coc-tailwindcss',
   \ 'coc-tsserver',
   \ 'coc-snippets',

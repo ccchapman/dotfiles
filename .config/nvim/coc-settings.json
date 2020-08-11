@@ -6,5 +6,6 @@
   },
   "emmet.excludeLanguages": [
     "css"
-  ]
+  ],
+  "coc.preferences.formatOnSaveFiletypes": ["css", "typescript", "js"]
 }
