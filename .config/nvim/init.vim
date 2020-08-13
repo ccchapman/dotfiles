@@ -1,7 +1,8 @@
 call plug#begin('~/.vim/plugged')
   Plug 'editorconfig/editorconfig-vim'
   Plug 'itchyny/lightline.vim'
-  Plug 'junegunn/fzf'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
   Plug 'jwalton512/vim-blade', { 'for': 'blade.php' }
   Plug 'mattn/emmet-vim'
   Plug 'dracula/vim', { 'as': 'dracula' }
