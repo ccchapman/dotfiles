@@ -75,6 +75,8 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 let g:lightline = {
   \ 'colorscheme': 'dracula',
+  \ 'separator': { 'left': '', 'right': '' },
+  \ 'subseparator': { 'left': '', 'right': '' }
   \ }
 let g:coc_global_extensions = [
   \ 'coc-css',
