@@ -9,7 +9,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'beyondwords/vim-twig'
   Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'tpope/vim-fugitive'
-  "Plug 'nvim-treesitter/nvim-treesitter'
+  Plug 'nvim-treesitter/nvim-treesitter'
 call plug#end()
 
 set autoindent
@@ -117,7 +117,6 @@ endfun
 
 " Treesitter
 lua <<EOF
---[[
 require'nvim-treesitter.configs'.setup {
     highlight = {
       enable = true,                    -- false will disable the whole extension
@@ -187,5 +186,4 @@ require'nvim-treesitter.configs'.setup {
     },
     ensure_installed = "all" -- one of "all", "language", or a list of languages
 }
---]]
 EOF
