@@ -35,6 +35,7 @@ set tabstop=2
 set undodir=~/.vim/undodir
 set undofile
 set updatetime=300
+set foldmethod=indent
 
 let g:dracula_colorterm=0
 colorscheme dracula
