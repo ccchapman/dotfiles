@@ -3,13 +3,14 @@ call plug#begin('~/.vim/plugged')
   Plug 'itchyny/lightline.vim'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
+  Plug 'stsewd/fzf-checkout.vim'
   Plug 'jwalton512/vim-blade', { 'for': 'blade.php' }
   Plug 'mattn/emmet-vim'
   Plug 'dracula/vim', { 'as': 'dracula' }
   Plug 'beyondwords/vim-twig'
   Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'tpope/vim-fugitive'
-  Plug 'nvim-treesitter/nvim-treesitter'
+  Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 call plug#end()
 
 set autoindent
@@ -52,10 +53,12 @@ nmap <leader>f :FZF<cr>
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
 nmap <leader>gs :G<bar> :only<cr>
+nmap <leader>gc :GCheckout<cr>
 nmap <leader>h :wincmd h<cr>
 nmap <leader>i :set list!<cr>
 nmap <leader>j :wincmd j<cr>
 nmap <leader>k :wincmd k<cr>
+nnoremap <silent> K :call <sid>show_documentation()<cr>
 nmap <leader>l :wincmd l<cr>
 nmap <leader>rg :CocSearch<space>
 nmap <leader>rr <Plug>(coc-rename)
@@ -106,75 +109,10 @@ fun! TrimWhitespace()
   call winrestview(l:save)
 endfun
 
-" Treesitter
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-    highlight = {
-      enable = true,                    -- false will disable the whole extension
-      disable = { "c", "rust" },        -- list of language that will be disabled
-      custom_captures = {               -- mapping of user defined captures to highlight groups
-        -- ["foo.bar"] = "Identifier"   -- highlight own capture @foo.bar with highlight group "Identifier", see :h nvim-treesitter-query-extensions
-      },
-    },
-    incremental_selection = {
-      enable = true,
-      disable = { "cpp", "lua" },
-      keymaps = {                       -- mappings for incremental selection (visual mappings)
-        init_selection = "gnn",         -- maps in normal mode to init the node/scope selection
-        node_incremental = "grn",       -- increment to the upper named parent
-        scope_incremental = "grc",      -- increment to the upper scope (as defined in locals.scm)
-        node_decremental = "grm",       -- decrement to the previous node
-      }
-    },
-    refactor = {
-      highlight_definitions = {
-        enable = true
-      },
-      highlight_current_scope = {
-        enable = true
-      },
-      smart_rename = {
-        enable = true,
-        keymaps = {
-          smart_rename = "grr"          -- mapping to rename reference under cursor
-        }
-      },
-      navigation = {
-        enable = true,
-        keymaps = {
-          goto_definition = "gnd",      -- mapping to go to definition of symbol under cursor
-          list_definitions = "gnD"      -- mapping to list all definitions in current file
-        }
-      }
-    },
-    textobjects = { -- syntax-aware textobjects
-    enable = true,
-    disable = {},
-    keymaps = {
-        ["iL"] = { -- you can define your own textobjects directly here
-          python = "(function_definition) @function",
-          cpp = "(function_definition) @function",
-          c = "(function_definition) @function",
-          java = "(method_declaration) @function"
-        },
-        -- or you use the queries from supported languages with textobjects.scm
-        ["af"] = "@function.outer",
-        ["if"] = "@function.inner",
-        ["aC"] = "@class.outer",
-        ["iC"] = "@class.inner",
-        ["ac"] = "@conditional.outer",
-        ["ic"] = "@conditional.inner",
-        ["ae"] = "@block.outer",
-        ["ie"] = "@block.inner",
-        ["al"] = "@loop.outer",
-        ["il"] = "@loop.inner",
-        ["is"] = "@statement.inner",
-        ["as"] = "@statement.outer",
-        ["ad"] = "@comment.outer",
-        ["am"] = "@call.outer",
-        ["im"] = "@call.inner"
-      }
-    },
-    ensure_installed = "all" -- one of "all", "language", or a list of languages
-}
-EOF
+fun! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfun
