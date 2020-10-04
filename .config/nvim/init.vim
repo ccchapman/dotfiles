@@ -1,4 +1,5 @@
 call plug#begin('~/.vim/plugged')
+  Plug 'morhetz/gruvbox'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'itchyny/lightline.vim'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -6,11 +7,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'stsewd/fzf-checkout.vim'
   Plug 'jwalton512/vim-blade', { 'for': 'blade.php' }
   Plug 'mattn/emmet-vim'
-  Plug 'dracula/vim', { 'as': 'dracula' }
   Plug 'beyondwords/vim-twig'
   Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'tpope/vim-fugitive'
-  Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 call plug#end()
 
 set autoindent
@@ -38,8 +37,7 @@ set undofile
 set updatetime=300
 set foldmethod=indent
 
-let g:dracula_colorterm=0
-colorscheme dracula
+colorscheme gruvbox
 hi ColorColumn ctermbg=0 guibg=lightgrey
 hi SpellBad cterm=underline ctermbg=none
 hi Comment cterm=italic
@@ -77,7 +75,7 @@ autocmd BufRead,BufNewFile *.twig set filetype=html.twig
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 let g:lightline = {
-  \ 'colorscheme': 'dracula',
+  \ 'colorscheme': 'gruvbox',
   \ 'separator': { 'left': '', 'right': '' },
   \ 'subseparator': { 'left': '', 'right': '' }
   \ }
