@@ -64,6 +64,10 @@ nmap <leader>sh :sp<cr>
 nmap <leader>sv :vsp<cr>
 nmap <leader>tc :tabnew<cr>
 nmap <leader>tn :tabn<cr>
+nmap <leader>tw :Watson<cr>
+nmap <leader>ts :WatsonStartCwd<cr>
+nmap <leader>te :WatsonStop<cr>
+nmap <leader>tr :WatsonRestart<cr>
 
 autocmd BufReadPost *
   \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
