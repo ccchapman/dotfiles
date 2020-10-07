@@ -1,4 +1,8 @@
 {
+  "diagnostic.errorSign": "❗",
+  "diagnostic.warningSign": "⚠️",
+  "diagnostic.infoSign": "ℹ️",
+  "diagnostic.hintSign": "❔",
   "scss.validate": false,
   "css.validate": false,
   "emmet.includeLanguages": {
