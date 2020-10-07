@@ -48,6 +48,7 @@ inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<c-h>"
 inoremap <silent><expr> <tab> pumvisible() ? "\<c-n>" : <sid>checkBackSpace() ? "\<tab>" : coc#refresh()
 nmap <leader>cs :noh<cr>
 nmap <leader>f :FZF<cr>
+nmap <leader>ga :CocDiagnostics<cr>
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
 nmap <leader>gs :G<bar> :only<cr>
