@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'beyondwords/vim-twig'
   Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'tpope/vim-fugitive'
+  Plug 'ccchapman/watson.nvim', { 'branch': 'main' }
 call plug#end()
 
 set autoindent
@@ -35,7 +36,7 @@ set tabstop=2
 set undodir=~/.vim/undodir
 set undofile
 set updatetime=300
-set foldmethod=indent
+"set foldmethod=indent
 
 colorscheme gruvbox
 hi ColorColumn ctermbg=0 guibg=lightgrey
