@@ -95,6 +95,7 @@ let g:coc_global_extensions = [
   \ 'coc-tsserver',
   \ 'coc-snippets',
   \ 'coc-svg',
+  \ 'coc-yank',
   \ ]
 let g:coc_filetype_map = {
   \ 'html.twig': 'html',
