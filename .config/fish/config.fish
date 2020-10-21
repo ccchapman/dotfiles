@@ -1,5 +1,8 @@
 fish_vi_key_bindings
-set fish_greeting
+
+function fish_greeting
+  echo -e '\nNever wrestle with pigs.\nYou both get dirty and the pig likes it.\n'
+end
 
 function fish_right_prompt
 end
