@@ -10,4 +10,6 @@
 
 [Cascadia Code](https://github.com/microsoft/cascadia-code)
 
-[Gruvbox](https://github.com/morhetz/gruvbox)
+[Dracula](https://draculatheme.com/)
+
+[i3](https://i3wm.org/)
