@@ -1,7 +1,7 @@
 fish_vi_key_bindings
 
-function fish_greeting
-  echo -e '\nNever wrestle with pigs.\nYou both get dirty and the pig likes it.\n'
+function fish_mode_prompt
+  # Disable vi mode indicator
 end
 
 function fish_right_prompt

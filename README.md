@@ -8,8 +8,10 @@
 
 [Neovim](https://neovim.io/)
 
-[Cascadia Code](https://github.com/microsoft/cascadia-code)
+[JetBrains Mono](https://www.jetbrains.com/lp/mono/)
 
 [Dracula](https://draculatheme.com/)
 
 [i3](https://i3wm.org/)
+
+[Alacritty](https://github.com/alacritty/alacritty)

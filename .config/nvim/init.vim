@@ -1,5 +1,5 @@
 call plug#begin('~/.vim/plugged')
-  Plug 'dracula/vim'
+  Plug 'morhetz/gruvbox'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'itchyny/lightline.vim'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -37,8 +37,7 @@ set undodir=~/.vim/undodir
 set undofile
 set updatetime=300
 
-let g:dracula_colorterm = 0
-colorscheme dracula
+colorscheme gruvbox
 hi SpellBad cterm=underline ctermbg=none
 hi Comment cterm=italic
 
@@ -80,7 +79,7 @@ autocmd BufRead,BufNewFile *.twig set filetype=html.twig
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 let g:lightline = {
-  \ 'colorscheme': 'dracula',
+  \ 'colorscheme': 'gruvbox',
   \ }
 let g:coc_global_extensions = [
   \ 'coc-css',
