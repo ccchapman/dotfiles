@@ -1,5 +1,8 @@
 fish_vi_key_bindings
 
+function fish_greeting
+end
+
 function fish_mode_prompt
   # Disable vi mode indicator
 end
