@@ -10,7 +10,7 @@
 
 [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
 
-[Dracula](https://draculatheme.com/)
+[Gruvbox](https://github.com/morhetz/gruvbox)
 
 [i3](https://i3wm.org/)
 
