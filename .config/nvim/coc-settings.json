@@ -8,8 +8,12 @@
   "emmet.includeLanguages": {
     "twig": "html"
   },
-  "emmet.excludeLanguages": [
-    "css"
-  ],
-  "coc.preferences.formatOnSaveFiletypes": ["css", "typescript", "js"]
+  "emmet.excludeLanguages": ["css"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "typescript",
+    "js",
+    "php",
+    "json"
+  ]
 }
