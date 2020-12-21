@@ -2,7 +2,12 @@ font:
   size: 8
   normal:
     family: JetBrains Mono
-shell: /bin/fish
+shell:
+  program: /bin/fish
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux"
 window:
   padding:
     x: 4
