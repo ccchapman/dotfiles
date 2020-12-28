@@ -15,11 +15,6 @@
 There are so many great fonts for programming. JetBrains Mono probably sparks
 the most joy, but I also love Fira Code and Cascadia Code.
 
-[Gruvbox](https://github.com/morhetz/gruvbox)
-
-My most favorite colour scheme. Sometimes I change things around, and
-inevitably return to Gruvbox.
-
 [Alacritty](https://github.com/alacritty/alacritty)
 
 In the past I have used Terminal, Terminator, GNOME Terminal, Konsole, Hyper,

@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
-  Plug 'morhetz/gruvbox'
+  Plug 'chriskempson/base16-vim'
+  Plug 'nolo18/base16lightline'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'itchyny/lightline.vim'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -37,9 +38,12 @@ set undodir=~/.vim/undodir
 set undofile
 set updatetime=300
 
-colorscheme gruvbox
+let base16colorspace=256
+colorscheme base16-default-dark
 hi SpellBad cterm=underline ctermbg=none
 hi Comment cterm=italic
+hi LineNr ctermbg=none
+hi CursorLineNr ctermfg=green
 
 let mapleader = ' '
 
@@ -78,9 +82,8 @@ autocmd BufRead,BufNewFile *.twig set filetype=html.twig
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-let g:lightline = {
-  \ 'colorscheme': 'gruvbox',
-  \ }
+let g:lightline = { 'colorscheme': 'base16lightline'}
+
 let g:coc_global_extensions = [
   \ 'coc-css',
   \ 'coc-emmet',
