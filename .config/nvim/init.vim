@@ -18,6 +18,7 @@ set autoindent
 set clipboard=unnamedplus
 set colorcolumn=80,120
 set expandtab
+set hidden
 set hlsearch
 set icm=split
 set incsearch
