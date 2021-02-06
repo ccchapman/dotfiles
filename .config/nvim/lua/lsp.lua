@@ -1,13 +1,18 @@
 local lspconfig = require('lspconfig')
+local completion = require('completion')
 
 -- Language Servers
 
 lspconfig.tsserver.setup{
-	on_attach=require'completion'.on_attach
+	on_attach = completion.on_attach
 }
 
 lspconfig.cssls.setup{
-	on_attach=require'completion'.on_attach
+	on_attach = completion.on_attach
+}
+
+lspconfig.intelephense.setup{
+	on_attach = completion.on_attach
 }
 
 -- Remaps
@@ -41,3 +46,23 @@ vim.api.nvim_set_keymap(
 		silent = true,
 	}
 )
+
+vim.api.nvim_set_keymap(
+	'i',
+	'<S-Tab>',
+	'pumvisible() ? "\\<C-p>" : "\\<Tab>"',
+	{
+		expr = true,
+	}
+)
+
+vim.api.nvim_set_keymap(
+	'i',
+	'<Tab>',
+	'pumvisible() ? "\\<C-n>" : "\\<Tab>"',
+	{
+		expr = true,
+	}
+)
+
+vim.api.nvim_set_option('completeopt', 'menuone,noinsert,noselect')
