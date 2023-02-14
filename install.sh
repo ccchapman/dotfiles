@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Dotfiles
+mv .config/* ~/.config
+
 apt-get update
 
 # Utilities
