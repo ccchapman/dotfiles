@@ -1,8 +1,12 @@
 FROM ubuntu:latest
 
-COPY ./.config .
-RUN mv ./.config ~
+COPY . .
 
-COPY ./install.sh .
+RUN rm Dockerfile
+
+RUN rm -rf ~/.config
+RUN mkdir ~/.config
+RUN mv .config/* ~/.config
+
 RUN ./install.sh
 RUN rm ./install.sh
